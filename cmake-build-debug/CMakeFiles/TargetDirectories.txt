@@ -1,0 +1,3 @@
+C:/Users/bhbha/CLionProjects/AlgorithemAssighments/cmake-build-debug/CMakeFiles/AlgorithemAssighments.dir
+C:/Users/bhbha/CLionProjects/AlgorithemAssighments/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/bhbha/CLionProjects/AlgorithemAssighments/cmake-build-debug/CMakeFiles/rebuild_cache.dir
