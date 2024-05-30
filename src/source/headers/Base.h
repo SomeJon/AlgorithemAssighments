@@ -5,8 +5,10 @@
 #include <stdlib.h>
 #include <vector>
 #include <list>
+#include <algorithm>
 #include <iostream>
-
+#include <string>
+using namespace std;
 
 
 #endif

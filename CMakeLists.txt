@@ -3,4 +3,10 @@ project(AlgorithemAssighments)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(AlgorithemAssighments main.cpp)
+add_executable(AlgorithemAssighments src/source/Codes/Main.cpp
+        src/source/headers/Edge.h
+        src/source/headers/Base.h
+        src/source/headers/Graph.h
+        src/source/headers/Vertex.h
+        src/source/headers/main.h
+)
