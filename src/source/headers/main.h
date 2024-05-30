@@ -9,4 +9,6 @@
 
 int main();
 
+Graph createGraph();
+
 #endif //ALGORITHEMASSIGHMENTS_MAIN_H

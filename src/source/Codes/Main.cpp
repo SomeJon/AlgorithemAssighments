@@ -1,6 +1,13 @@
 #include "../headers/main.h"
 
 int main(){
+    Graph G = createGraph();
+
+
+    cout << G;
+}
+
+Graph createGraph(){
     int n;
     int m;
 
@@ -18,5 +25,8 @@ int main(){
         G.AddEdge(u, v);
     }
 
-    cout << G;
+    return G;
 }
+
+
+void Visit(Vertex u, vector<)

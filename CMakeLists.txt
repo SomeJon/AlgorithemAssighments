@@ -9,4 +9,6 @@ add_executable(AlgorithemAssighments src/source/Codes/Main.cpp
         src/source/headers/Graph.h
         src/source/headers/Vertex.h
         src/source/headers/main.h
+        src/source/headers/AlgoMethod.h
+        src/source/Codes/AlgoMethod.cpp
 )
