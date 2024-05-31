@@ -55,8 +55,8 @@ public:
 
 	void AddEdge(int u, int v) {
 		try {
-            Vertex& thisU = V.at(u - 1);
-            Vertex& thisV = V.at(v - 1);
+            Vertex& thisU = V.at(u);
+            Vertex& thisV = V.at(v);
 			Edge<Vertex> toAdd = thisU.addEdge(thisV);
             E.push_back(toAdd);
 		}
@@ -69,11 +69,23 @@ public:
 		try {
 			list<Edge<Vertex>> listToSearch = V.at(u - 1).getAdjacent();
 			listToSearch.erase(find(listToSearch.begin(), listToSearch.end(), v));
+            E.erase(find(listToSearch.begin(), listToSearch.end(), v));
 		}
 		catch (...) {
             throw runtime_error("Invalid Input");
 		}
 	}
+
+    Graph T(){
+        Graph reversed = Graph::MakeEmptyGraph((int)V.size());
+        for(auto & edge : E){
+            Vertex u = edge.getLeft();
+            Vertex v = edge.getRight();
+            reversed.AddEdge(v.getPoint(), u.getPoint());
+        }
+
+        return reversed;
+    }
 
 	virtual ~Graph() = default;
 

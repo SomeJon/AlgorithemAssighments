@@ -2,9 +2,14 @@
 
 int main(){
     Graph G = createGraph();
+    vector<Vertex> endList;
+    vector<int> scc;
 
-
+    endList = AlgoMethod::DfsEndList(G);
+    Graph Gt = G.T();
+    scc = AlgoMethod::DfsStrongComponent(Gt, endList);
     cout << G;
+    cout << Gt;
 }
 
 Graph createGraph(){
@@ -22,11 +27,8 @@ Graph createGraph(){
         int v;
 
         cin >> u >> v;
-        G.AddEdge(u, v);
+        G.AddEdge(u - 1, v - 1);
     }
 
     return G;
 }
-
-
-void Visit(Vertex u, vector<)

@@ -6,6 +6,7 @@
 #include "Vertex.h"
 #include "Edge.h"
 #include "Graph.h"
+#include "AlgoMethod.h"
 
 int main();
 
