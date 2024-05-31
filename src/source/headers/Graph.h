@@ -100,16 +100,16 @@ public:
         int n = g.V.size();
         int m = g.E.size();
 
-        os << n  << " " << m << "\n";
-        for(int i = 0 ; i < n ; i++)
-            os << g.V.at(i) << " ";
-        os << "\n";
-
-        _List_const_iterator<Edge<Vertex>> curr = g.E.begin();
-        for(int i = 0 ; i < m ; i++) {
-            os << *curr;
-            curr++;
-        }
+        os << n  << " " << m;
+//        for(int i = 0 ; i < n ; i++)
+//            os << g.V.at(i) << " ";
+//        os << "\n";
+//
+//        _List_const_iterator<Edge<Vertex>> curr = g.E.begin();
+//        for(int i = 0 ; i < m ; i++) {
+//            os << *curr;
+//            curr++;
+//        }
 
         return os;
     }

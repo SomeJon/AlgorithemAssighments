@@ -4,7 +4,7 @@ int main(){
     Graph G = createGraph();
     Graph GSuper = AlgoMethod::GetSuperGraph(G);
 
-    cout << G;
+//    cout << G;
     cout << GSuper;
 }
 
