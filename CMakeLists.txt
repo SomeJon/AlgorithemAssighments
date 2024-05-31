@@ -3,13 +3,13 @@ project(AlgorithemAssighments)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(AlgorithemAssighments src/source/Codes/Main.cpp
-        src/source/headers/Edge.h
-        src/source/headers/Base.h
-        src/source/headers/Graph.h
-        src/source/headers/Vertex.h
-        src/source/headers/main.h
-        src/source/headers/AlgoMethod.h
-        src/source/Codes/AlgoMethod.cpp
-        src/source/headers/Adjacent.h
+add_executable(AlgorithemAssighments src/Main.cpp
+        src/Edge.h
+        src/Base.h
+        src/Graph.h
+        src/Vertex.h
+        src/main.h
+        src/AlgoMethod.h
+        src/AlgoMethod.cpp
+        src/Adjacent.h
 )

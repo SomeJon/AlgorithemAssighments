@@ -1,11 +1,15 @@
-#include "../headers/main.h"
+#include "main.h"
 
 int main(){
+    try{
     Graph G = createGraph();
     Graph GSuper = AlgoMethod::GetSuperGraph(G);
 
-//    cout << G;
     cout << GSuper;
+    }
+    catch(...){
+        std::exit(1);
+    }
 }
 
 Graph createGraph(){

@@ -1,8 +1,8 @@
-#include "../headers/AlgoMethod.h"
+#include "AlgoMethod.h"
 
-vector<Vertex> AlgoMethod::DfsEndList(Graph& G) {
+list<int> AlgoMethod::DfsEndList(Graph& G) {
     vector<eColor> Color;
-    vector<Vertex> d;
+    list<int> d;
     vector<Vertex> V = G.getVertexes();
     int n = V.size();
 
@@ -21,7 +21,7 @@ vector<Vertex> AlgoMethod::DfsEndList(Graph& G) {
     return d;
 }
 
-void AlgoMethod::VisitEndList(Vertex& u, vector<AlgoMethod::eColor>& Color, vector<Vertex>& d) {
+void AlgoMethod::VisitEndList(Vertex& u, vector<AlgoMethod::eColor>& Color, list<int>& d) {
     list<Adjacent<Vertex>> adjacent = u.getAdjacent();
     for(Adjacent<Vertex> & adj : adjacent){
         Vertex v = adj.getAdj();
@@ -31,13 +31,14 @@ void AlgoMethod::VisitEndList(Vertex& u, vector<AlgoMethod::eColor>& Color, vect
         }
     }
     Color[vertex(u)] = Black;
-    d.push_back(u);
+    d.push_back(u.getPoint());
 }
 
-vector<int> AlgoMethod::DfsStrongComponent(Graph& GT, vector<Vertex>& endList) {
+vector<int> AlgoMethod::DfsStrongComponent(Graph& GT, list<int> endList) {
     vector<eColor> Color;
     vector<int> stronglyConnectedComponent;
-    vector<Vertex> V = endList;
+    vector<Vertex> V = GT.getVertexes();
+    std::reverse(endList.begin(), endList.end());
     int id = 0;
     int n = V.size();
 
@@ -50,7 +51,8 @@ vector<int> AlgoMethod::DfsStrongComponent(Graph& GT, vector<Vertex>& endList) {
     }
 
     for(int i = 0 ; i < n ; i++) {
-        Vertex u = V.at(i);
+        Vertex u = V.at(*endList.begin());
+        endList.pop_front();
         if (Color[vertex(u)] == White) { //Visit
             Color[vertex(u)] = Gray;
             AlgoMethod::VisitStrongComponent(u, Color, stronglyConnectedComponent, id);
@@ -77,11 +79,16 @@ void AlgoMethod::VisitStrongComponent
 
 Graph AlgoMethod::GetSuperGraph(Graph &G) {
     Graph Gt = G.T();
-    vector<Vertex> endList = DfsEndList(G);
+    list<int> endList = DfsEndList(G);
     vector<int> IdComp = DfsStrongComponent(Gt, endList);
     vector<Vertex> V = G.getVertexes();
-    int numOfComponent = *std::max_element
-            (IdComp.begin(), IdComp.end()) + 1;
+    int numOfComponent;
+
+    if(IdComp.size() > 0)
+        numOfComponent = *std::max_element
+                (IdComp.begin(), IdComp.end()) + 1;
+    else
+        numOfComponent = 0;
     vector<list<Vertex>> components = createComponentArray
             (IdComp, V, numOfComponent);
 

@@ -49,17 +49,17 @@ cmake_ninja_workdir = C$:/Users/bhbha/CLionProjects/AlgorithemAssighments/cmake-
 
 build cmake_object_order_depends_target_AlgorithemAssighments: phony || CMakeFiles/AlgorithemAssighments.dir
 
-build CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/Main.cpp.obj: CXX_COMPILER__AlgorithemAssighments_unscanned_Debug C$:/Users/bhbha/CLionProjects/AlgorithemAssighments/src/source/Codes/Main.cpp || cmake_object_order_depends_target_AlgorithemAssighments
-  DEP_FILE = CMakeFiles\AlgorithemAssighments.dir\src\source\Codes\Main.cpp.obj.d
+build CMakeFiles/AlgorithemAssighments.dir/src/Main.cpp.obj: CXX_COMPILER__AlgorithemAssighments_unscanned_Debug C$:/Users/bhbha/CLionProjects/AlgorithemAssighments/src/Main.cpp || cmake_object_order_depends_target_AlgorithemAssighments
+  DEP_FILE = CMakeFiles\AlgorithemAssighments.dir\src\Main.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\AlgorithemAssighments.dir
-  OBJECT_FILE_DIR = CMakeFiles\AlgorithemAssighments.dir\src\source\Codes
+  OBJECT_FILE_DIR = CMakeFiles\AlgorithemAssighments.dir\src
 
-build CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/AlgoMethod.cpp.obj: CXX_COMPILER__AlgorithemAssighments_unscanned_Debug C$:/Users/bhbha/CLionProjects/AlgorithemAssighments/src/source/Codes/AlgoMethod.cpp || cmake_object_order_depends_target_AlgorithemAssighments
-  DEP_FILE = CMakeFiles\AlgorithemAssighments.dir\src\source\Codes\AlgoMethod.cpp.obj.d
+build CMakeFiles/AlgorithemAssighments.dir/src/AlgoMethod.cpp.obj: CXX_COMPILER__AlgorithemAssighments_unscanned_Debug C$:/Users/bhbha/CLionProjects/AlgorithemAssighments/src/AlgoMethod.cpp || cmake_object_order_depends_target_AlgorithemAssighments
+  DEP_FILE = CMakeFiles\AlgorithemAssighments.dir\src\AlgoMethod.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\AlgorithemAssighments.dir
-  OBJECT_FILE_DIR = CMakeFiles\AlgorithemAssighments.dir\src\source\Codes
+  OBJECT_FILE_DIR = CMakeFiles\AlgorithemAssighments.dir\src
 
 
 # =============================================================================
@@ -69,7 +69,7 @@ build CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/AlgoMethod.cpp.obj: 
 #############################################
 # Link the executable AlgorithemAssighments.exe
 
-build AlgorithemAssighments.exe: CXX_EXECUTABLE_LINKER__AlgorithemAssighments_Debug CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/Main.cpp.obj CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/AlgoMethod.cpp.obj
+build AlgorithemAssighments.exe: CXX_EXECUTABLE_LINKER__AlgorithemAssighments_Debug CMakeFiles/AlgorithemAssighments.dir/src/Main.cpp.obj CMakeFiles/AlgorithemAssighments.dir/src/AlgoMethod.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\AlgorithemAssighments.dir
