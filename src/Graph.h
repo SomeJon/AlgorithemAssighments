@@ -59,6 +59,9 @@ public:
             if(u == v){
                 throw runtime_error("invalid input");
             }
+            if(isAdjacent(u,v)){
+                throw runtime_error("invalid input");
+            }
 
             Vertex& thisU = V.at(u);
             Vertex& thisV = V.at(v);
