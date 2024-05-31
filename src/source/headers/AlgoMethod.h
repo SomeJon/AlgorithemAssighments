@@ -16,11 +16,13 @@ private:
 public:
     static vector<Vertex> DfsEndList(Graph& G);
     static vector<int> DfsStrongComponent(Graph& GT, vector<Vertex>& d);
+    static Graph GetSuperGraph(Graph& G);
 
 private:
     static void VisitEndList(Vertex& v, vector<eColor>& Color, vector<Vertex>& endList);
     static void VisitStrongComponent(Vertex& v, vector<eColor>& Color, vector<int>& idArray, int id);
     static int vertex(const Vertex& u)     {return u.getPoint();}
+    static vector<list<Vertex>> createComponentArray(vector<int> id, vector<Vertex> V, int size);
 
 };
 

@@ -1,0 +1,9 @@
+# ninja log v6
+950	1168	7388653372572442	AlgorithemAssighments.exe	6e0cb994a324648
+37	605	7387786019344771	CMakeFiles/AlgorithemAssighments.dir/src/source/Main.cpp.obj	523797468775d96
+2	358	7388654773144213	build.ninja	ad7e8ed39bca16d4
+29	848	7388653363360436	CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/Main.cpp.obj	6259247afb90cce0
+39	950	7388653363460463	CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/AlgoMethod.cpp.obj	c69745c17aebe101
+17	1298	7388670487941130	CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/Main.cpp.obj	6259247afb90cce0
+32	1380	7388670488080212	CMakeFiles/AlgorithemAssighments.dir/src/source/Codes/AlgoMethod.cpp.obj	c69745c17aebe101
+1380	1626	7388670501562864	AlgorithemAssighments.exe	6e0cb994a324648

@@ -11,4 +11,5 @@ add_executable(AlgorithemAssighments src/source/Codes/Main.cpp
         src/source/headers/main.h
         src/source/headers/AlgoMethod.h
         src/source/Codes/AlgoMethod.cpp
+        src/source/headers/Adjacent.h
 )

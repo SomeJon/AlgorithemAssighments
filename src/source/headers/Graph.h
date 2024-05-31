@@ -30,8 +30,9 @@ public:
 		bool ret = false;
 
 		try {
-			list<Edge<Vertex>> listToSearch = V.at(u - 1).getAdjacent();
-			ret = (find(listToSearch.begin(), listToSearch.end(), v) != listToSearch.end());
+			list<Adjacent<Vertex>> listToSearch = V.at(u - 1).getAdjacent();
+			ret = (find(listToSearch.begin(), listToSearch.end(),
+                        Vertex(v)) != listToSearch.end());
 		}
 		catch (...) {
 			throw runtime_error("Invalid Input");
@@ -40,8 +41,8 @@ public:
 		return ret;
 	}
 
-	list<Edge<Vertex>> GetAdjList(int u) {
-        list<Edge<Vertex>> ret;
+	list<Adjacent<Vertex>> GetAdjList(int u) {
+        list<Adjacent<Vertex>> ret;
 		
 		try {
 			ret = V.at(u - 1).getAdjacent();
@@ -57,7 +58,8 @@ public:
 		try {
             Vertex& thisU = V.at(u);
             Vertex& thisV = V.at(v);
-			Edge<Vertex> toAdd = thisU.addEdge(thisV);
+			thisU.addEdge(thisV);
+            Edge<Vertex> toAdd(thisU, thisV);
             E.push_back(toAdd);
 		}
 		catch (...) {
@@ -67,9 +69,13 @@ public:
 
 	void RemoveEdge(int u, int v) {
 		try {
-			list<Edge<Vertex>> listToSearch = V.at(u - 1).getAdjacent();
-			listToSearch.erase(find(listToSearch.begin(), listToSearch.end(), v));
-            E.erase(find(listToSearch.begin(), listToSearch.end(), v));
+			V.at(u - 1).removeEdge(Vertex(v));
+            for(Edge<Vertex> edge : E){
+                if(edge.getLeft().getPoint() == u && edge.getRight().getPoint() == v){
+                    E.remove(edge);
+                    break;
+                }
+            }
 		}
 		catch (...) {
             throw runtime_error("Invalid Input");

@@ -2,14 +2,10 @@
 
 int main(){
     Graph G = createGraph();
-    vector<Vertex> endList;
-    vector<int> scc;
+    Graph GSuper = AlgoMethod::GetSuperGraph(G);
 
-    endList = AlgoMethod::DfsEndList(G);
-    Graph Gt = G.T();
-    scc = AlgoMethod::DfsStrongComponent(Gt, endList);
     cout << G;
-    cout << Gt;
+    cout << GSuper;
 }
 
 Graph createGraph(){
@@ -19,7 +15,7 @@ Graph createGraph(){
     cin >> n;
     cin >> m;
 
-    Graph G(n);
+    Graph G = Graph::MakeEmptyGraph(n);
 
 
     for(int i = 0 ; i < m ; i++){

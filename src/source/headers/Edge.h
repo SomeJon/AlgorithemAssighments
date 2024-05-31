@@ -38,6 +38,17 @@ public:
         return static_cast<bool>(i_Other != m_Right.getPoint());
     }
 
+    bool operator==(Edge i_Other) {
+        return static_cast<bool>
+            (i_Other.m_Right.getPoint() == m_Right.getPoint() &&
+                i_Other.m_Left.getPoint() == m_Left.getPoint());
+
+    }
+
+    bool operator!=(Edge i_Other) {
+        return !(i_Other == *this);
+    }
+
     friend std::ostream& operator<<(std::ostream& os, const Edge& e)
     {
         os << e.m_Left << " " << e.m_Right << "\n";

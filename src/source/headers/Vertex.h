@@ -2,29 +2,32 @@
 #define __VERTEX_H
 
 #include "Base.h"
-#include "Edge.h"
+#include "Adjacent.h"
 
 class Vertex {
 private:
 	const int m_Point;
-	list<Edge<Vertex>> m_Adjacent;
+	list<Adjacent<Vertex>> m_Adjacent;
 
 public:
     [[nodiscard]] int getPoint() const {
         return m_Point;
     }
 
-    [[nodiscard]] list<Edge<Vertex>> getAdjacent() const {
+    [[nodiscard]] list<Adjacent<Vertex>> getAdjacent() const {
         return m_Adjacent;
     }
 
     explicit Vertex(int i_point) : m_Point(i_point) {}
 
-    Edge<Vertex> addEdge(Vertex& i_Adjacent) {
-		Edge<Vertex> toAdd(*this, i_Adjacent);
-		m_Adjacent.push_back(toAdd);
-		return toAdd;
+    void addEdge(Vertex& i_Adjacent) {
+		m_Adjacent.emplace_back(i_Adjacent);
 	}
+
+    void removeEdge(const Vertex& v){
+        m_Adjacent.erase(
+                find(m_Adjacent.begin(), m_Adjacent.end(),v));
+    }
 
 	bool operator==(const Vertex& i_Other) const {
 		return i_Other.m_Point == m_Point;
