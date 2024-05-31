@@ -35,7 +35,7 @@ public:
                         Vertex(v)) != listToSearch.end());
 		}
 		catch (...) {
-			throw runtime_error("Invalid Input");
+            throw runtime_error("invalid input");
 		}
 
 		return ret;
@@ -48,7 +48,7 @@ public:
 			ret = V.at(u - 1).getAdjacent();
 		}
 		catch (...) {
-            throw runtime_error("Invalid Input");
+            throw runtime_error("invalid input");
 		}
 
 		return ret;
@@ -63,7 +63,7 @@ public:
             E.push_back(toAdd);
 		}
 		catch (...) {
-            throw runtime_error("Invalid Input");
+            throw runtime_error("invalid input");
 		}
 	}
 
@@ -78,7 +78,7 @@ public:
             }
 		}
 		catch (...) {
-            throw runtime_error("Invalid Input");
+            throw runtime_error("invalid input");
 		}
 	}
 

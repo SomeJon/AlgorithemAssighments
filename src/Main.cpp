@@ -7,7 +7,8 @@ int main(){
 
     cout << GSuper;
     }
-    catch(...){
+    catch(runtime_error& e){
+        cout << e.what();
         std::exit(1);
     }
 }
