@@ -56,6 +56,10 @@ public:
 
 	void AddEdge(int u, int v) {
 		try {
+            if(u == v){
+                throw runtime_error("invalid input");
+            }
+
             Vertex& thisU = V.at(u);
             Vertex& thisV = V.at(v);
 			thisU.addEdge(thisV);
