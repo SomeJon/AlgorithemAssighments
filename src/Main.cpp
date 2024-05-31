@@ -1,5 +1,7 @@
 #include "main.h"
 
+//At any point, if an int is asked for a point, its value should be -1 after receiving the value,
+// program only works with points starting at 0, if a point is being print, it is printed with a +1
 int main(){
     try{
     Graph G = createGraph();
