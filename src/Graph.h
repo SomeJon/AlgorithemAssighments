@@ -30,7 +30,7 @@ public:
 		bool ret = false;
 
 		try {
-			list<Adjacent<Vertex>> listToSearch = V.at(u - 1).getAdjacent();
+			list<Adjacent<Vertex>> listToSearch = V.at(u).getAdjacent();
 			ret = (find(listToSearch.begin(), listToSearch.end(),
                         Vertex(v)) != listToSearch.end());
 		}
@@ -45,7 +45,7 @@ public:
         list<Adjacent<Vertex>> ret;
 		
 		try {
-			ret = V.at(u - 1).getAdjacent();
+			ret = V.at(u).getAdjacent();
 		}
 		catch (...) {
             throw runtime_error("invalid input");
@@ -76,7 +76,7 @@ public:
 
 	void RemoveEdge(int u, int v) {
 		try {
-			V.at(u - 1).removeEdge(Vertex(v));
+			V.at(u).removeEdge(Vertex(v));
             for(Edge<Vertex> edge : E){
                 if(edge.getLeft().getPoint() == u && edge.getRight().getPoint() == v){
                     E.remove(edge);
